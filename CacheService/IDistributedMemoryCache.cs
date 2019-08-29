@@ -7,6 +7,8 @@ namespace CacheService
     {
         Task SetAsync(string key, string value);
 
+        Task SetAsync<T>(string key, T value);
+
         Task<string> GetAsync(string key);
     }
 }

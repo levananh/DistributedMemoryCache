@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Distributed;
+using Newtonsoft.Json;
 
 namespace CacheService
 {
@@ -17,7 +18,7 @@ namespace CacheService
 
         public async Task SetAsync(string key, string value)
         {
-            if (string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(value) || string.IsNullOrWhiteSpace(key))
             {
                 return;
             }
@@ -29,6 +30,12 @@ namespace CacheService
             };
             
             await distributedCache.SetAsync(key, Encoding.ASCII.GetBytes(value), cacheOption);
+        }
+
+        public async Task SetAsync<T>(string key, T value)
+        {
+            var jsonValue = JsonConvert.SerializeObject(value);
+            await SetAsync(key, jsonValue);
         }
 
         public async Task<string> GetAsync(string key)
