@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedCache", "DistributedCache\DistributedCache.csproj", "{1E1E64DF-22CF-4A80-9825-A6DE485C1C72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService", "CacheService\CacheService.csproj", "{BF0C6D48-61CC-4050-AF8E-DE4F279AEE4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E1E64DF-22CF-4A80-9825-A6DE485C1C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1E64DF-22CF-4A80-9825-A6DE485C1C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1E64DF-22CF-4A80-9825-A6DE485C1C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1E64DF-22CF-4A80-9825-A6DE485C1C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0C6D48-61CC-4050-AF8E-DE4F279AEE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0C6D48-61CC-4050-AF8E-DE4F279AEE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0C6D48-61CC-4050-AF8E-DE4F279AEE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0C6D48-61CC-4050-AF8E-DE4F279AEE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B37AE6D-51FC-41ED-926D-6CFB5C555AD7}
+	EndGlobalSection
+EndGlobal
