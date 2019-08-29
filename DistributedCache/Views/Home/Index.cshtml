@@ -2,7 +2,13 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Dữ liệu được cache</h1>
-    @ViewBag.CacheData
-</div>
+    <div>
+        <p>Cache ngày tháng: <b>@ViewBag.CacheData</b></p>
+        <p>Cache số nguyên: <b>@ViewBag.Number</b></p>
+        <p>Cache object:</p>
+        <ul>
+            <li>Id: @ViewBag.Doctor.Id</li>
+            <li>Name: @ViewBag.Doctor.Name</li>
+            <li>Email: @ViewBag.Doctor.Email</li>
+        </ul>
+    </div>

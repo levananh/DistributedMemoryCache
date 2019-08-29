@@ -33,7 +33,7 @@ namespace DistributedCache
             });
 
             services.AddDistributedMemoryCache();
-            services.AddTransient<IDistributedMemoryCache, DistributedMemoryCache>();
+            services.AddTransient<IDataCache, DataCache>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
