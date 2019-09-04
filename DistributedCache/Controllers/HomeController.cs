@@ -26,15 +26,13 @@ namespace DistributedCache.Controllers
 
         private async Task CacheObject()
         {
-            const string key = "cache_object";
-            await cache.SetAsync(key, new Doctor()
+            var x = new Random().Next(); // chỉ để test
+            ViewBag.Doctor = await cache.GetAsync<Doctor>("doctor", () => new Doctor()
             {
-                Id = 1,
+                Id = x,
                 Email = "anh.levan108@gmail.com",
                 Name = $"Le Anh {DateTime.Now:F}"
             });
-
-            ViewBag.Doctor = await cache.GetAsync<Doctor>(key);
         }
 
         private async Task TestCacheNumber()

@@ -45,6 +45,28 @@ namespace CacheService
         }
 
         /// <inheritdoc />
+        public async Task<T> GetAsync<T>(string key, Func<T> getDataForCaching)
+        {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentException("Key must not be null");
+            }
+
+            var cachedValue = await distributedCache.GetAsync(key);
+
+            if (cachedValue != null)
+                return JsonConvert.DeserializeObject<T>(Encoding.ASCII.GetString(cachedValue));
+
+            var data = getDataForCaching();
+            if (data != null)
+            {
+                await SetAsync(key, data, true);
+            }
+
+            return data;
+        }
+
+        /// <inheritdoc />
         public async Task DeleteAsync(string key)
         {
             if (!string.IsNullOrWhiteSpace(key))
