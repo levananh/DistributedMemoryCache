@@ -32,7 +32,17 @@ namespace DistributedCache
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDistributedMemoryCache();
+            // Distributed Memory Cache
+            // services.AddDistributedMemoryCache();
+
+
+            services.AddDistributedSqlServerCache(options =>
+            {
+                options.ConnectionString = "Data Source=.;Initial Catalog=TestCache;Integrated Security=True";
+                options.SchemaName = "dbo";
+                options.TableName = "CacheData";
+            });
+
             services.AddTransient<IDataCache, DataCache>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
